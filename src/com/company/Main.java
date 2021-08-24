@@ -4,26 +4,25 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int mat, fizik, kimya, turkce;
-        Scanner not = new Scanner(System.in);
+        double kdvTutari,girilenTutar,kdvliTutar;
+        Scanner tutar = new Scanner(System.in);
+        System.out.print("Tutar Giriniz: ");
+        girilenTutar = tutar.nextDouble();
+        System.out.println("Tutar: "+ girilenTutar);
 
-        System.out.print("Matematik Ders Notu : ");
-        mat = not.nextInt();
+        if (girilenTutar>1000){
+            kdvTutari = girilenTutar*8/100;
+            kdvliTutar = kdvTutari + girilenTutar;
+            System.out.println("KDV Tutarı: "+ kdvTutari);
+            System.out.println("KDVli Tutar: "+ kdvliTutar);
+        }
+        else {
+            kdvTutari = girilenTutar*18/100;
+            kdvliTutar = kdvTutari + girilenTutar;
+            System.out.println("KDV Tutarı: "+ kdvTutari);
+            System.out.println("KDVli Tutar: "+ kdvliTutar);
+        }
 
-        System.out.print("Fizik Ders Notu : ");
-        fizik = not.nextInt();
-
-        System.out.print("Kimya Ders Notu : ");
-        kimya = not.nextInt();
-
-        System.out.print("Türkçe Ders Notu : ");
-        turkce = not.nextInt();
-
-        double ort = (mat+fizik+kimya+turkce)/4;
-        System.out.print("Ortalamanız: " + ort);
-
-        String durum = ort>60 ? " Geçti" : " Kaldı";
-        System.out.println(durum);
 
     }
 }
