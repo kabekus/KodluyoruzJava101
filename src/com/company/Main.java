@@ -4,18 +4,17 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int r, a;
-        float pi =3.14f, daireDilimAlanı;
 
-        Scanner daire = new Scanner(System.in);
+        float kilo=0f, boy=0f,vücutKitleIndeksi=0f;
 
-        System.out.print(" Yarıçap değeri girinz: ");
-        r=daire.nextInt();
+        Scanner input = new Scanner(System.in);
 
-        System.out.print(" Açı giriniz: ");
-        a=daire.nextInt();
+        System.out.print("Boyunuz (M): ");
+        boy=input.nextFloat();
+        System.out.print("Kilonuz (Kg): ");
+        kilo=input.nextFloat();
 
-        daireDilimAlanı = (pi*(r*r)*a)/360;
-        System.out.print("Daire dilimi alanı: "+ daireDilimAlanı);
+        vücutKitleIndeksi = kilo / (boy*boy);
+        System.out.print("Vücut Kitle İndeksiniz: " + vücutKitleIndeksi);
     }
 }
