@@ -4,17 +4,18 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int km;
-        double kmTutar=2.20, toplam, baslangicUcret=10;
+        int r, a;
+        float pi =3.14f, daireDilimAlanı;
 
-        Scanner taksiMetre = new Scanner(System.in);
-        System.out.print("Gidilecek Yolu KM Cinsinden Girin: ");
-        km=taksiMetre.nextByte();
+        Scanner daire = new Scanner(System.in);
 
-        toplam = km*kmTutar;
-        toplam += baslangicUcret;
+        System.out.print(" Yarıçap değeri girinz: ");
+        r=daire.nextInt();
 
-        toplam = (toplam<20) ? 20 : toplam;
-        System.out.print("Toplam Ücret: " + toplam);
+        System.out.print(" Açı giriniz: ");
+        a=daire.nextInt();
+
+        daireDilimAlanı = (pi*(r*r)*a)/360;
+        System.out.print("Daire dilimi alanı: "+ daireDilimAlanı);
     }
 }
