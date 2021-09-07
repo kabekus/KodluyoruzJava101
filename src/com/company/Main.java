@@ -4,25 +4,16 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        double kdvTutari,girilenTutar,kdvliTutar;
-        Scanner tutar = new Scanner(System.in);
-        System.out.print("Tutar Giriniz: ");
-        girilenTutar = tutar.nextDouble();
-        System.out.println("Tutar: "+ girilenTutar);
-
-        if (girilenTutar>1000){
-            kdvTutari = girilenTutar*8/100;
-            kdvliTutar = kdvTutari + girilenTutar;
-            System.out.println("KDV Tutarı: "+ kdvTutari);
-            System.out.println("KDVli Tutar: "+ kdvliTutar);
-        }
-        else {
-            kdvTutari = girilenTutar*18/100;
-            kdvliTutar = kdvTutari + girilenTutar;
-            System.out.println("KDV Tutarı: "+ kdvTutari);
-            System.out.println("KDVli Tutar: "+ kdvliTutar);
-        }
-
-
+        int kenarA, kenarB, kenarC, alan, u;
+        Scanner kenar = new Scanner(System.in);
+        System.out.print("A kenarı: ");
+        kenarA = kenar.nextInt();
+        System.out.print("B kenarı: ");
+        kenarB = kenar.nextInt();
+        System.out.print("C kenarı: ");
+        kenarC = kenar.nextInt();
+        u = (kenarA+kenarB+kenarC)/2;
+        alan= (int) Math.sqrt(u*(u-kenarA)*(u-kenarB)*(u-kenarC));
+        System.out.print("Belirlediğiniz Üçgenin Alanı: "+alan);
     }
 }
