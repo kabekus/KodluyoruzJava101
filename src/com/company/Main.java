@@ -5,16 +5,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        float kilo=0f, boy=0f,vücutKitleIndeksi=0f;
+        float armutFiyat=2.14f, elmaFiyat=3.67f, domatesFiyat=1.11f,
+                muzFiyat=0.95f, patlicanFiyat=5, toplamTutar;
+        int armut, elma, domates, muz, patlican;
 
-        Scanner input = new Scanner(System.in);
+        Scanner manav = new Scanner(System.in);
+        System.out.print("Armut (Kg):");
+        armut=manav.nextInt();
+        System.out.print("Elma (Kg):");
+        elma=manav.nextInt();
+        System.out.print("Domates (Kg):");
+        domates=manav.nextInt();
+        System.out.print("Muz (Kg):");
+        muz=manav.nextInt();
+        System.out.print("Patlıcan (Kg):");
+        patlican=manav.nextInt();
 
-        System.out.print("Boyunuz (M): ");
-        boy=input.nextFloat();
-        System.out.print("Kilonuz (Kg): ");
-        kilo=input.nextFloat();
-
-        vücutKitleIndeksi = kilo / (boy*boy);
-        System.out.print("Vücut Kitle İndeksiniz: " + vücutKitleIndeksi);
+        toplamTutar = (armut*armutFiyat)+(elma*elmaFiyat)+(domates*domatesFiyat)+(muz*muzFiyat)+(patlican*patlicanFiyat);
+        System.out.print("Toplam Ödenecek Tutar: " + toplamTutar);
     }
 }
