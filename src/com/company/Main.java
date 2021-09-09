@@ -5,36 +5,27 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int sayi1, sayi2, secim;
-        float islem;
+        String kullaniciAdi="patika", kullaniciSifre="java159", kullaniciSifreYeni, cevap, ad, sifre;
+        Scanner kullanici = new Scanner(System.in);
 
-        Scanner hesap = new Scanner(System.in);
+        System.out.print("Kullanıcı Adınız: ");
+        ad = kullanici.nextLine();
+        System.out.print("Şifreniz: ");
+        sifre = kullanici.nextLine();
+     if(sifre.equals(kullaniciSifre) && ad.equals(kullaniciAdi)){
+         System.out.print("Giriş Yapıldı !");
+     }else
+         System.out.print("Yanlış Bilgi Girdiniz! Şifrenizi Yenilemek İster misiniz? ");
 
-        System.out.print("1. Sayıyı Girin: ");
-        sayi1=hesap.nextInt();
-        System.out.print("2. Sayıyı Girin: ");
-        sayi2=hesap.nextInt();
-        System.out.println("(Toplama:1, Çıkarma:2, Çarpma:3, Bölme:4) İşlem Seçiniz: ");
-        secim=hesap.nextInt();
-
-        switch (secim){
-            case 1 :
-                islem = sayi1+sayi2;
-                System.out.print("İşem sonucu: "+islem);
-                break;
-            case 2 :
-               islem = sayi1-sayi2;
-                System.out.print("İşem sonucu: "+islem);
-                break;
-            case 3:
-                islem = sayi1*sayi2;
-                System.out.print("İşem sonucu: "+islem);
-                break;
-            case 4:
-                islem = sayi1/sayi2;
-                System.out.print("İşem sonucu: "+islem);
-                break;
-        }
-
+     cevap=kullanici.nextLine();
+     if (cevap.equals("evet")){
+         System.out.print("Yeni Şifre Giriniz: ");
+         kullaniciSifreYeni=kullanici.nextLine();
+         if (kullaniciSifreYeni.equals(kullaniciSifre) || kullaniciSifreYeni.equals(sifre)){
+             System.out.print("Girdiğiniz Şifre Uygun Değil !!");
+         }else
+             System.out.print("Şifre Kaydedildi !");
+     }else
+         System.out.print("Yeniden Giriş Yapın.");
     }
 }
