@@ -5,26 +5,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int fizikNot, matematikNot, kimyaNot, turkceNot, notOrtalama;
-        Scanner not = new Scanner(System.in);
+        int sicaklik;
+        Scanner havaDurumu = new Scanner(System.in);
 
-        System.out.print("Fizik Not: ");
-        fizikNot= not.nextInt();
-        System.out.print("Matematik Not: ");
-        matematikNot= not.nextInt();
-        System.out.print("Kimya Not: ");
-        kimyaNot= not.nextInt();
-        System.out.print("Türkçe Not: ");
-        turkceNot= not.nextInt();
+        System.out.print("Sıcaklık Giriniz: ");
+        sicaklik=havaDurumu.nextInt();
 
-        notOrtalama= (fizikNot+matematikNot+kimyaNot+turkceNot)/4;
-
-        if(notOrtalama>0 && notOrtalama<55){
-            System.out.print("Not Ortalamanız: "+notOrtalama+" Kaldınız !");
-        }else if (notOrtalama>=55 && notOrtalama<=100){
-            System.out.print("Not Ortalamanız: "+notOrtalama+" Tebrikler Geçtiniz !");
+        if(sicaklik<5){
+            System.out.print("Sıcaklık: "+sicaklik+"°"+" Önerilen Etkinlik: Kayak ");
+        }else if (sicaklik>=5 && sicaklik<15){
+            System.out.print("Sıcaklık: "+sicaklik+"°"+" Önerilen Etkinlik: Sinema");
+        }else if (sicaklik>=15 && sicaklik<25){
+            System.out.print("Sıcaklık: "+sicaklik+"°"+" Önerilen Etkinlik: Piknik");
         }else {
-            System.out.print("Girdiğiniz Notları Kontrol ediniz!" );
+            System.out.print("Sıcaklık: "+sicaklik+"°"+" Önerilen Etkinlik: Yüzme");
         }
     }
 }
