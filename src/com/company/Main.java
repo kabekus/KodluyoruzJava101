@@ -5,27 +5,26 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String kullaniciAdi="patika", kullaniciSifre="java159", kullaniciSifreYeni, cevap, ad, sifre;
-        Scanner kullanici = new Scanner(System.in);
+        int fizikNot, matematikNot, kimyaNot, turkceNot, notOrtalama;
+        Scanner not = new Scanner(System.in);
 
-        System.out.print("Kullanıcı Adınız: ");
-        ad = kullanici.nextLine();
-        System.out.print("Şifreniz: ");
-        sifre = kullanici.nextLine();
-     if(sifre.equals(kullaniciSifre) && ad.equals(kullaniciAdi)){
-         System.out.print("Giriş Yapıldı !");
-     }else
-         System.out.print("Yanlış Bilgi Girdiniz! Şifrenizi Yenilemek İster misiniz? ");
+        System.out.print("Fizik Not: ");
+        fizikNot= not.nextInt();
+        System.out.print("Matematik Not: ");
+        matematikNot= not.nextInt();
+        System.out.print("Kimya Not: ");
+        kimyaNot= not.nextInt();
+        System.out.print("Türkçe Not: ");
+        turkceNot= not.nextInt();
 
-     cevap=kullanici.nextLine();
-     if (cevap.equals("evet")){
-         System.out.print("Yeni Şifre Giriniz: ");
-         kullaniciSifreYeni=kullanici.nextLine();
-         if (kullaniciSifreYeni.equals(kullaniciSifre) || kullaniciSifreYeni.equals(sifre)){
-             System.out.print("Girdiğiniz Şifre Uygun Değil !!");
-         }else
-             System.out.print("Şifre Kaydedildi !");
-     }else
-         System.out.print("Yeniden Giriş Yapın.");
+        notOrtalama= (fizikNot+matematikNot+kimyaNot+turkceNot)/4;
+
+        if(notOrtalama>0 && notOrtalama<55){
+            System.out.print("Not Ortalamanız: "+notOrtalama+" Kaldınız !");
+        }else if (notOrtalama>=55 && notOrtalama<=100){
+            System.out.print("Not Ortalamanız: "+notOrtalama+" Tebrikler Geçtiniz !");
+        }else {
+            System.out.print("Girdiğiniz Notları Kontrol ediniz!" );
+        }
     }
 }
