@@ -5,52 +5,32 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int dogumYılı, zodyak;
+        int yil;
 
-        Scanner burc = new Scanner(System.in);
+        Scanner artikYil = new Scanner(System.in);
+        System.out.print("Yıl Giriniz: ");
+        yil=artikYil.nextInt();
 
-        System.out.print("Doğum Yılınızı Girin: ");
-        dogumYılı=burc.nextInt();
+        //artık yıl olup olmadığının kontrolü
 
-        zodyak = dogumYılı%12;
+        // If else:
+        if (yil%4==0){
+            System.out.println(yil+" yılı ARTIK YIL !");
+        }else {
+            System.out.println(yil+" yılı ARTIK YIL DEĞİL !");
+        }
 
-        switch (zodyak){
+        // Switch Case:
+        int artikMi = yil%4 ;
+
+        switch (artikMi){
             case 0:
-                System.out.print("Çin Zodyağı Burcunuz : Maymun");
+                System.out.println(yil+" yılı Artık Yıl !");
                 break;
-            case 1:
-                System.out.print("Çin Zodyağı Burcunuz : Horoz");
-                break;
-            case 2:
-                System.out.print("Çin Zodyağı Burcunuz : Köpek");
-                break;
-            case 3:
-                System.out.print("Çin Zodyağı Burcunuz : Domuz");
-                break;
-            case 4:
-                System.out.print("Çin Zodyağı Burcunuz : Fare");
-                break;
-            case 5:
-                System.out.print("Çin Zodyağı Burcunuz : Öküz");
-                break;
-            case 6:
-                System.out.print("Çin Zodyağı Burcunuz : Kaplan");
-                break;
-            case 7:
-                System.out.print("Çin Zodyağı Burcunuz : Tavşan");
-                break;
-            case 8:
-                System.out.print("Çin Zodyağı Burcunuz : Ejderha");
-                break;
-            case 9:
-                System.out.print("Çin Zodyağı Burcunuz : Yılan");
-                break;
-            case 10:
-                System.out.print("Çin Zodyağı Burcunuz : At");
-                break;
-            case 11:
-                System.out.print("Çin Zodyağı Burcunuz : Koyun");
+            default:
+                System.out.println(yil+" yılı Artık Yıl Değil !");
                 break;
         }
+
     }
 }
