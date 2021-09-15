@@ -5,88 +5,72 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int ay, gun;
-        Scanner burc = new Scanner(System.in);
+        //Tanımlama
+        int mesafe, yas, tip;
+        double mesafeUcreti=0.10,normalTutar,indirimliTutar,yasIndirim,tipTutar=0.20, tipIndirim;
 
-        System.out.print("Doğduğunuz Gün: ");
-        gun = burc.nextInt();
-        System.out.print("Doğduğunuz Ay: ");
-        ay = burc.nextInt();
+        //Kullanıcıdan veri alma ve değişkenlere atama.
+        Scanner bilet = new Scanner(System.in);
+        System.out.print("Gideceğiniz Mesafe (KM): ");
+        mesafe = bilet.nextInt();
+        System.out.print("Yaşınız: ");
+        yas = bilet.nextInt();
+        System.out.print("Yolculuk Tipi (1:Tek Yön, 2:Gidiş-Dönüş): ");
+        tip = bilet.nextInt();
 
-        if (ay ==1){
-            if (gun>=22 && gun<=30){
-                System.out.print("Burcunuz : Kova");
-            }else if (gun>=1 && gun<22) {
-                System.out.print("Burcunuz : Oğlak");
+        //Bilet ücreti hesaplama
+        normalTutar=mesafe*mesafeUcreti;
+        if(mesafe>0 && yas>0){
+            if (yas<=12){
+                switch (tip){
+                    case 1:
+                        yasIndirim=(normalTutar*50)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        System.out.print("%50 indirim. Fiyat: "+indirimliTutar+" ₺");
+                        break;
+                    case 2:
+                        yasIndirim=(normalTutar*50)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        tipIndirim=indirimliTutar*tipTutar;
+                        System.out.print("%50+%20 indirim. Fiyat: "+tipIndirim+" ₺");
+                        break;
+                }
+            }else if (yas>12 && yas<=24){
+                switch (tip){
+                    case 1:
+                        yasIndirim=(normalTutar*10)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        System.out.print("%10 indirim. Fiyat: "+indirimliTutar+" ₺");
+                        break;
+                    case 2:
+                        yasIndirim=(normalTutar*10)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        tipIndirim=indirimliTutar*tipTutar;
+                        System.out.print("%10+%20 indirim. Fiyat: "+tipIndirim+" ₺");
+                        break;
+                }
+            }else if (yas>=65){
+                switch (tip){
+                    case 1:
+                        yasIndirim=(normalTutar*30)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        System.out.print("%30 indirim. Fiyat: "+indirimliTutar+" ₺");
+                        break;
+                    case 2:
+                        yasIndirim=(normalTutar*30)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        tipIndirim=indirimliTutar*tipTutar;
+                        System.out.print("%30+%20 indirim. Fiyat: "+tipIndirim+" ₺");
+                        break;
+                }
+            }else if (tip==2){
+                indirimliTutar=normalTutar*tipTutar;
+                System.out.print("%20 indirim. Fiyat: "+indirimliTutar+" ₺");
+            }else {
+                System.out.print("Fiyat: "+normalTutar+" ₺");
             }
-        }else if (ay == 2){
-            if (gun>=20 && gun<29){
-                System.out.print("Burcunuz : Balık");
-            }else if (gun>=1 && gun<20) {
-                System.out.print("Burcunuz : Kova");
-            }
-        }else if (ay == 3){
-            if (gun>=21 && gun<=31){
-                System.out.print("Burcunuz : Koç");
-            }else if (gun>=1 && gun<21) {
-                System.out.print("Burcunuz : Balık");
-            }
-        }else if (ay == 4){
-            if (gun>=21 && gun<31){
-                System.out.print("Burcunuz : Boğa");
-            }else if (gun>=1 && gun<21) {
-                System.out.print("Burcunuz : Koç");
-            }
-        }else if (ay == 5){
-            if (gun>=22 && gun<=31){
-                System.out.print("Burcunuz : İkizler");
-            }else if (gun>=1 && gun<22) {
-                System.out.print("Burcunuz : Boğa");
-            }
-        }else if (ay == 6){
-            if (gun>=23 && gun<31){
-                System.out.print("Burcunuz : Yengeç");
-            }else if (gun>=1 && gun<23) {
-                System.out.print("Burcunuz : İkizler");
-            }
-        }else if (ay == 7){
-            if (gun>=23 && gun<=31){
-                System.out.print("Burcunuz : Aslan");
-            }else if (gun>=1 && gun<=21) {
-                System.out.print("Burcunuz : Yengeç");
-            }
-        }else if (ay == 8){
-            if (gun>=23 && gun<=31){
-                System.out.print("Burcunuz : Başak");
-            }else if (gun>=1 && gun<23) {
-                System.out.print("Burcunuz : Aslan");
-            }
-        }else if (ay == 9){
-            if (gun>=23 && gun<31){
-                System.out.print("Burcunuz : Terazi");
-            }else if (gun>=1 && gun<23) {
-                System.out.print("Burcunuz : Başak");
-            }
-        }else if (ay == 10){
-            if (gun>=23 && gun<=31){
-                System.out.print("Burcunuz : Akrep");
-            }else if (gun>=1 && gun<23) {
-                System.out.print("Burcunuz : Terazi");
-            }
-        }else if (ay == 11){
-            if (gun>=22 && gun<31){
-                System.out.print("Burcunuz : Yay");
-            }else if (gun>=1 && gun<22) {
-                System.out.print("Burcunuz : Akrep");
-            }
-        }else if (ay == 12){
-            if (gun>=22 && gun<=31){
-                System.out.print("Burcunuz : Oğlak");
-            }else if (gun>=1 && gun<22) {
-                System.out.print("Burcunuz : Yay");
-            }
+        }else {
+           System.out.print("Hatalı Değer Girdiniz !");
         }
-
-
     }
 }
