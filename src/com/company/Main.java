@@ -5,20 +5,37 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int sicaklik;
-        Scanner havaDurumu = new Scanner(System.in);
+        int sayiA, sayiB, sayiC;
+        Scanner sirala = new Scanner(System.in);
 
-        System.out.print("Sıcaklık Giriniz: ");
-        sicaklik=havaDurumu.nextInt();
+        System.out.print("1. Sayıyı Girin: ");
+        sayiA=sirala.nextInt();
+        System.out.print("2. Sayıyı Girin: ");
+        sayiB=sirala.nextInt();
+        System.out.print("3 Sayıyı Girin: ");
+        sayiC=sirala.nextInt();
 
-        if(sicaklik<5){
-            System.out.print("Sıcaklık: "+sicaklik+"°"+" Önerilen Etkinlik: Kayak ");
-        }else if (sicaklik>=5 && sicaklik<15){
-            System.out.print("Sıcaklık: "+sicaklik+"°"+" Önerilen Etkinlik: Sinema");
-        }else if (sicaklik>=15 && sicaklik<25){
-            System.out.print("Sıcaklık: "+sicaklik+"°"+" Önerilen Etkinlik: Piknik");
+        if (sayiA<sayiB && sayiA<sayiC){
+            if (sayiB<sayiC){
+                System.out.print("1. Sayı < 2. Sayı < 3. Sayı");
+            }else{
+                System.out.print("1. Sayı < 3. Sayı < 2. Sayı");
+            }
+        }else if (sayiB<sayiA && sayiB<sayiC){
+            if (sayiA<sayiC){
+                System.out.print("2. Sayı < 1. Sayı < 3. Sayı");
+            }else{
+                System.out.print("2. Sayı < 3. Sayı < 1. Sayı");
+            }
+        }else if (sayiC<sayiA && sayiC<sayiB){
+            if (sayiA<sayiB){
+                System.out.print("3. Sayı < 1. Sayı < 2. Sayı");
+            }else{
+                System.out.print("3. Sayı < 2. Sayı < 1. Sayı");
+            }
         }else {
-            System.out.print("Sıcaklık: "+sicaklik+"°"+" Önerilen Etkinlik: Yüzme");
+            System.out.print("Sayılar Eşit ^_^");
         }
+
     }
 }
