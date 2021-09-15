@@ -5,37 +5,88 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int sayiA, sayiB, sayiC;
-        Scanner sirala = new Scanner(System.in);
+        int ay, gun;
+        Scanner burc = new Scanner(System.in);
 
-        System.out.print("1. Sayıyı Girin: ");
-        sayiA=sirala.nextInt();
-        System.out.print("2. Sayıyı Girin: ");
-        sayiB=sirala.nextInt();
-        System.out.print("3 Sayıyı Girin: ");
-        sayiC=sirala.nextInt();
+        System.out.print("Doğduğunuz Gün: ");
+        gun = burc.nextInt();
+        System.out.print("Doğduğunuz Ay: ");
+        ay = burc.nextInt();
 
-        if (sayiA<sayiB && sayiA<sayiC){
-            if (sayiB<sayiC){
-                System.out.print("1. Sayı < 2. Sayı < 3. Sayı");
-            }else{
-                System.out.print("1. Sayı < 3. Sayı < 2. Sayı");
+        if (ay ==1){
+            if (gun>=22 && gun<=30){
+                System.out.print("Burcunuz : Kova");
+            }else if (gun>=1 && gun<22) {
+                System.out.print("Burcunuz : Oğlak");
             }
-        }else if (sayiB<sayiA && sayiB<sayiC){
-            if (sayiA<sayiC){
-                System.out.print("2. Sayı < 1. Sayı < 3. Sayı");
-            }else{
-                System.out.print("2. Sayı < 3. Sayı < 1. Sayı");
+        }else if (ay == 2){
+            if (gun>=20 && gun<29){
+                System.out.print("Burcunuz : Balık");
+            }else if (gun>=1 && gun<20) {
+                System.out.print("Burcunuz : Kova");
             }
-        }else if (sayiC<sayiA && sayiC<sayiB){
-            if (sayiA<sayiB){
-                System.out.print("3. Sayı < 1. Sayı < 2. Sayı");
-            }else{
-                System.out.print("3. Sayı < 2. Sayı < 1. Sayı");
+        }else if (ay == 3){
+            if (gun>=21 && gun<=31){
+                System.out.print("Burcunuz : Koç");
+            }else if (gun>=1 && gun<21) {
+                System.out.print("Burcunuz : Balık");
             }
-        }else {
-            System.out.print("Sayılar Eşit ^_^");
+        }else if (ay == 4){
+            if (gun>=21 && gun<31){
+                System.out.print("Burcunuz : Boğa");
+            }else if (gun>=1 && gun<21) {
+                System.out.print("Burcunuz : Koç");
+            }
+        }else if (ay == 5){
+            if (gun>=22 && gun<=31){
+                System.out.print("Burcunuz : İkizler");
+            }else if (gun>=1 && gun<22) {
+                System.out.print("Burcunuz : Boğa");
+            }
+        }else if (ay == 6){
+            if (gun>=23 && gun<31){
+                System.out.print("Burcunuz : Yengeç");
+            }else if (gun>=1 && gun<23) {
+                System.out.print("Burcunuz : İkizler");
+            }
+        }else if (ay == 7){
+            if (gun>=23 && gun<=31){
+                System.out.print("Burcunuz : Aslan");
+            }else if (gun>=1 && gun<=21) {
+                System.out.print("Burcunuz : Yengeç");
+            }
+        }else if (ay == 8){
+            if (gun>=23 && gun<=31){
+                System.out.print("Burcunuz : Başak");
+            }else if (gun>=1 && gun<23) {
+                System.out.print("Burcunuz : Aslan");
+            }
+        }else if (ay == 9){
+            if (gun>=23 && gun<31){
+                System.out.print("Burcunuz : Terazi");
+            }else if (gun>=1 && gun<23) {
+                System.out.print("Burcunuz : Başak");
+            }
+        }else if (ay == 10){
+            if (gun>=23 && gun<=31){
+                System.out.print("Burcunuz : Akrep");
+            }else if (gun>=1 && gun<23) {
+                System.out.print("Burcunuz : Terazi");
+            }
+        }else if (ay == 11){
+            if (gun>=22 && gun<31){
+                System.out.print("Burcunuz : Yay");
+            }else if (gun>=1 && gun<22) {
+                System.out.print("Burcunuz : Akrep");
+            }
+        }else if (ay == 12){
+            if (gun>=22 && gun<=31){
+                System.out.print("Burcunuz : Oğlak");
+            }else if (gun>=1 && gun<22) {
+                System.out.print("Burcunuz : Yay");
+            }
         }
+
 
     }
 }
