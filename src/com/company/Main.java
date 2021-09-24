@@ -4,33 +4,28 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
-        int yil;
-
-        Scanner artikYil = new Scanner(System.in);
-        System.out.print("Yıl Giriniz: ");
-        yil=artikYil.nextInt();
-
-        //artık yıl olup olmadığının kontrolü
-
-        // If else:
-        if (yil%4==0){
-            System.out.println(yil+" yılı ARTIK YIL !");
-        }else {
-            System.out.println(yil+" yılı ARTIK YIL DEĞİL !");
+        int sayi;
+        Scanner hesapla = new Scanner(System.in);
+        System.out.print("Bir sayı giriniz: ");
+        sayi = hesapla.nextInt();
+        for (int i = 1; i <= sayi; i++) {
+            if (i % 2 == 0)
+                System.out.print(i + ",");
         }
 
-        // Switch Case:
-        int artikMi = yil%4 ;
+        System.out.println("--------------------------");
 
-        switch (artikMi){
-            case 0:
-                System.out.println(yil+" yılı Artık Yıl !");
-                break;
-            default:
-                System.out.println(yil+" yılı Artık Yıl Değil !");
-                break;
+        int sayi2,say=0,ort=0,toplamI=0;
+        Scanner ortalama = new Scanner(System.in);
+        System.out.print("Bir sayı giriniz: ");
+        sayi2 = ortalama.nextInt();
+        for (int i=0; i <= sayi2 ; i++){
+            if ((i%3 == 0) || (i%4==0)){
+                toplamI += i;
+                say++;
+            }
         }
-
+        ort = toplamI/say;
+        System.out.println("Ortalama: "+ort);
     }
 }
