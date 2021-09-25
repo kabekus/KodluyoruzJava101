@@ -4,28 +4,37 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int sayi;
-        Scanner hesapla = new Scanner(System.in);
-        System.out.print("Bir sayı giriniz: ");
-        sayi = hesapla.nextInt();
-        for (int i = 1; i <= sayi; i++) {
-            if (i % 2 == 0)
-                System.out.print(i + ",");
-        }
 
-        System.out.println("--------------------------");
+       int number, total=0;
+        Scanner input = new Scanner(System.in);
 
-        int sayi2,say=0,ort=0,toplamI=0;
-        Scanner ortalama = new Scanner(System.in);
-        System.out.print("Bir sayı giriniz: ");
-        sayi2 = ortalama.nextInt();
-        for (int i=0; i <= sayi2 ; i++){
-            if ((i%3 == 0) || (i%4==0)){
-                toplamI += i;
-                say++;
+        do{
+            System.out.print("Sayı Girin: ");
+            number = input.nextInt();
+            if (number%2==1){
+                total+=number;
             }
-        }
-        ort = toplamI/say;
-        System.out.println("Ortalama: "+ort);
+        }while(number>0);
+
+        System.out.print("Toplam Sayı: "+total);
+
+
+     /*
+     Java döngüler ile tek bir sayı girilene kadar kullanıcıdan girişleri kabul eden ve
+     girilen değerlerden çift ve 4'ün katları olan sayıları toplayıp ekrana basan programı yazıyoruz.
+     */
+        int number1, total1=0;
+        Scanner input1 = new Scanner(System.in);
+
+        do{
+            System.out.print("Sayı Girin: ");
+            number1 = input1.nextInt();
+
+            if (number1%4==0){
+                total1 += number1;
+            }
+        }while(number1%2==0);
+        System.out.print("Toplam Sayı: "+total1);
     }
+
 }
