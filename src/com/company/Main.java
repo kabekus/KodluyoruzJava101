@@ -5,17 +5,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int n,k,total=1;
-        Scanner inp= new Scanner(System.in);
-        System.out.print("Üssü Alınacak Sayıyı Girin: ");
-        n= inp.nextInt();
-        System.out.print("Üs Olacak Sayıyı Girin: ");
-        k= inp.nextInt();
+        Scanner input = new Scanner(System.in);
+        System.out.print("Sayı Giriniz :  ");
+        int number = input.nextInt(),basNumber = 0,tempNumber = number,basValue=0,total=0;
 
-        for( int i=1; i<=k; i++){
-
-            total *= n;
+        while (tempNumber != 0) {
+            tempNumber /= 10;
+            basNumber++;
         }
-        System.out.print("cevap: "+ total);
+        tempNumber = number;
+        while (tempNumber != 0) {
+            basValue = tempNumber%10;
+            System.out.println(basValue);
+            tempNumber/=10;
+            total+=basValue;
+        }
+        System.out.println("Basamak toplamları: "+total);
+
     }
 }
