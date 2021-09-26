@@ -6,21 +6,12 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Sayı Giriniz :  ");
-        int number = input.nextInt(),basNumber = 0,tempNumber = number,basValue=0,total=0;
-
-        while (tempNumber != 0) {
-            tempNumber /= 10;
-            basNumber++;
+        System.out.print("N Sayısını Giriniz :  ");
+        int n = input.nextInt();
+        double result = 0.0;
+        for (double i =1; i<=n; i++){
+            result+=(1/i);
         }
-        tempNumber = number;
-        while (tempNumber != 0) {
-            basValue = tempNumber%10;
-            System.out.println(basValue);
-            tempNumber/=10;
-            total+=basValue;
-        }
-        System.out.println("Basamak toplamları: "+total);
-
+        System.out.print("Sonuç: "+result);
     }
 }
