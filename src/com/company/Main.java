@@ -1,65 +1,44 @@
 package com.company;
 import  java.util.Scanner;
-import  java.lang.Math;
+import java.lang.ArithmeticException;
 public class Main {
 
     public static void main(String[] args) {
-        String kullaniciAdi, sifre;
-        int hak=3, secim, bakiye=1500, para;
 
-       while (hak>0){
-           Scanner atm = new Scanner(System.in);
+        int sayi1, sayi2,ebob=1;
+        Scanner islem =new Scanner(System.in);
 
-           System.out.print("Kullanıcı Adınız: ");
-           kullaniciAdi = atm.nextLine();
-           System.out.print("Şifreniz: ");
-           sifre = atm.nextLine();
+        System.out.print("Küçük Sayı: ");
+        sayi1=islem.nextInt();
+        System.out.print("Büyük Sayı: ");
+        sayi2=islem.nextInt();
 
-           if (kullaniciAdi.equals("patika") && sifre.equals("dev123")){
-               System.out.println("Kodluyoruz Bankasına Hoşgeldiniz ^_^");
-               do {
-                   System.out.println("Yapmak istediğiniz işlemi seçin: \n" +
-                           "1-Para Yatırma \n" +
-                           "2-Para Çekme \n" +
-                           "3-Bakiye Sorgula \n"+
-                           "4-Çıkış \n");
-                   secim = atm.nextInt();
+        for (int i=1; i<=sayi1 ; i++){
+            if ((sayi1%i==0) && (sayi2%i==0)){
+                ebob = i;
+            }
+        }
+        System.out.println("EBOB(1): "+ebob);
 
-                   switch (secim){
+        System.out.println("*********************");
 
-                       case 1:
-                        System.out.println("Yatırılacak Tutar: ");
-                        para = atm.nextInt();
-                        bakiye+=para;
-                           System.out.println("İşlem tamamlandı.Bakiyeniz: "+bakiye);
-                        break;
+        for (int j=sayi1; j>=1 ; j--){
+            if ((sayi1%j==0) && (sayi2%j==0)){
+                ebob = j;
+                break;
+            }
+        }
+        System.out.println("EBOB(2): "+ebob);
 
-                        case 2:
-                            System.out.println("Çekilecek Tutar: ");
-                            para = atm.nextInt();
-                            if (bakiye < para) {
-                                System.out.print("Yetersiz Bakiye !");
-                            }else {
-                                bakiye -= para;
-                                System.out.println("İşlem tamamlandı.Bakiyeniz: "+bakiye);
-                            }
-                        break;
-                        case 3:
-                            System.out.println("Bakiyeniz: "+bakiye);
-                            break;
-                   }
-               }while (secim != 4);
-               System.out.print("Tekrar Görüşmek Üzere ^_^");
-               break;
-           }else{
-               --hak;
-               System.out.println("Hatalı kullanıcı adı veya şifre. Tekrar Deneyin");
-               if (hak == 0){
-                   System.out.println("Kullanıcı kimliğiniz bloke oldu. Banka ile ilatişime geçin.");
-               }else{
-                   System.out.println("Kalan hakkınız: "+ hak);
-               }
-           }
-       }
+        System.out.println("EKOK ***********************");
+
+        for (int i=1 ; i<=(sayi1*sayi2); i++){
+            if ((i%sayi1==0) && (i%sayi2==0)){
+                System.out.println(i);
+                break;
+            }
+        }
+        System.out.println("***********************");
+        System.out.println((sayi1*sayi2)/ebob);
     }
 }
