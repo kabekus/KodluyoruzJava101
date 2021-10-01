@@ -4,18 +4,25 @@ import java.lang.ArithmeticException;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner diamond = new Scanner(System.in);
-        System.out.print("Üçgen: ");
-        int star = diamond.nextInt();
+        int tekrar, sayi,max=0, min=0;
 
-        for (int i = 1; i <= star; i++) {
-            for (int j = 0; j <= i-1; j++) {
-                System.out.print(" ");
+        Scanner maxmin = new Scanner(System.in);
+        System.out.print("Kaç Sayı Gireceksiniz: ");
+        tekrar = maxmin.nextInt();
+
+
+        for (int i=1;i<=tekrar;i++){
+            System.out.print(i+". Sayı: ");
+            sayi = maxmin.nextInt();
+
+            if (sayi>=max ){
+                max=sayi;
+
+            }else if (sayi<max && sayi<=min){
+                min=sayi;
             }
-            for (int k = (2*star)-3; k >= (2 * i)-1 ; k--) {
-                System.out.print("*");
-            }
-            System.out.println(" ");
         }
+        System.out.print("En büyük: "+ max + " En küçük: " + min);
+
     }
 }
