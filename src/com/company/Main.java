@@ -4,18 +4,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int kontrol=0;
-        for (int i=2 ;i<=100;i++){
-            for (int j=2;j<i;j++){
-                if (i/j==0){
-                        kontrol=1;
-                        break;
-                }
-            }
-            if (kontrol==0){
-                System.out.print(i+" ");
-            }
-        }
+        Scanner reader = new Scanner(System.in);
+        int n1=0,n2=1,n3,i,n;
+        System.out.print("N Sayısını Girin:");
+        n = reader.nextInt();
+        System.out.print(n1+" "+n2);
 
+        for(i=2;i<n;++i)
+        {
+            n3=n1+n2;
+            System.out.print(" "+n3);
+            n1=n2;
+            n2=n3;
+        }
+        System.out.println();
     }
 }
