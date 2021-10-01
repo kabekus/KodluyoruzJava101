@@ -3,22 +3,19 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int sayi,toplam=0;
-        Scanner input = new Scanner(System.in);
 
-        System.out.println("Sayı Giriniz: ");
-        sayi=input.nextInt();
-
-        for (int i=1 ; i<sayi; i++){
-            if (sayi%i==0){
-                toplam+=i;
+        int kontrol=0;
+        for (int i=2 ;i<=100;i++){
+            for (int j=2;j<i;j++){
+                if (i/j==0){
+                        kontrol=1;
+                        break;
+                }
+            }
+            if (kontrol==0){
+                System.out.print(i+" ");
             }
         }
-        if (toplam==sayi){
-            System.out.println("Mükemmel Sayı");
-        }
-        else{
-            System.out.println("Mükemmel Sayı Değildir");
-        }
+
     }
 }
