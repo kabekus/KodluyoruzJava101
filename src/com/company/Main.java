@@ -1,21 +1,24 @@
 package com.company;
 import  java.util.Scanner;
 public class Main {
-    static void uslusayi() {
+    static void asalsayi() {
+        int sayi, kontrol=0;
         Scanner scan = new Scanner(System.in);
-        System.out.print("Taban değeri giriniz :");
-        int taban = scan.nextInt();
-        System.out.print("Üs değeri giriniz :");
-        int us = scan.nextInt();
-        int result = 1;
-
-        for (int i = 1; i <= us; i++) {
-            result *= taban;
+        System.out.print("Sayı Giriniz :");
+        sayi= scan.nextInt();
+        for (int i = 2; i < sayi; i++) {
+            if (sayi % i == 0) {
+                kontrol = 1;
+                break;
+            }
         }
-        System.out.println("Sonuç : " + result);
-        uslusayi();
+        if(kontrol==0) {
+            System.out.println("Sayı Asaldır.");
+        }else{
+            System.out.println("Sayı Asal Değildir!");
+        }
     }
     public static void main(String[] args) {
-        uslusayi();
+        asalsayi();
     }
 }
