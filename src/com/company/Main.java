@@ -1,22 +1,24 @@
 package com.company;
 import  java.util.Scanner;
 public class Main {
+    static  boolean isPalindrom(int number){
+        int temp=number, reverseNumber=0, lastNumber;
+        while( temp !=0 ){
 
-    public static void main(String[] args) {
-
-        Scanner reader = new Scanner(System.in);
-        int n1=0,n2=1,n3,i,n;
-        System.out.print("N Sayısını Girin:");
-        n = reader.nextInt();
-        System.out.print(n1+" "+n2);
-
-        for(i=2;i<n;++i)
-        {
-            n3=n1+n2;
-            System.out.print(" "+n3);
-            n1=n2;
-            n2=n3;
+            lastNumber= temp % 10 ;
+            reverseNumber = (reverseNumber * 10) + lastNumber;
+            temp /= 10;
         }
-        System.out.println();
+        if (number == reverseNumber)
+            return true;
+        else
+            return  false;
+    }
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int sayi;
+        System.out.print("Bir sayı giriniz: ");
+        sayi= inp.nextInt();
+        System.out.print(isPalindrom(sayi));
     }
 }
