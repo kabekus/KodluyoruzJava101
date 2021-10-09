@@ -1,51 +1,19 @@
 package com.company;
 import  java.util.Scanner;
 public class Main {
-    static int besCikar(int n, boolean dNoktasi, int sayac) {
-
-        /*
-         n = Kullanıcının girmiş olduğu sayı.
-
-         dNoktasi = Sayının 0'a eşit veya küçük olmasının kontrolünü yapan değişken. Girilen sayı sıfırdan büyük
-         olacağından HER ZAMAN "TRUE"
-
-         sayac = 0 veya -(eksi) değerden önce ekrana basılan sayıların sayısı. Sayaç değişkeni kullanıcıdan alınan
-         n değerine bağlı olarak metot içerisinde değişebilir. Ancak başlangıç değeri HER ZAMAN "0" (sıfır) olmalıdır.
-
-
-         Örnek: 7 2 0 2 7 -> 0'dan önce 2 sayı var (7 ve 2).
-         Sayac değişkeni ile n sayısı artırlmaya başlandığında serinin sonsuza gitmesi engellenecek.
-        */
-
-        if (dNoktasi) {
-            if (n > 0) {
-                System.out.print(n + " ");
-                sayac++;
-                return besCikar(n - 5, true, sayac);
-            } else {
-                return besCikar(n, false, sayac);
-            }
-        } else {
-            System.out.print(n + " ");
-            if (sayac > 0) {
-                sayac--;
-                return besCikar(n + 5, false, sayac);
-            } else {
-                return 0;
-            }
-        }
-
-    }
-
     public static void main(String[] args) {
-        int n;
-        Scanner input = new Scanner(System.in);
+        Course algoritma = new Course("Algoritma", "Alg101", "ALG");
+        Course donanim = new Course("Donanım", "Dn101", "DNNM");
 
-        System.out.print("N Sayısı : ");
-        n = input.nextInt();
+        Teacher t1 = new Teacher("Ahmet Hoca", "90550000000", "ALG");
+        Teacher t2 = new Teacher("Fatma Ayşe", "90550000001", "DNNM");
 
-        System.out.print("Çıktısı : ");
-        besCikar(n, true, 0);
+        algoritma.addTeacher(t1);
+        donanim.addTeacher(t2);
+
+        Student s1 = new Student("Kabe Kuş", 4,"21100903",algoritma,donanim);
+        s1.addBulkExamNote(70,65,90,60);
+        s1.isPass();
 
     }
 }
