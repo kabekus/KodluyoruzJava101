@@ -2,18 +2,9 @@ package com.company;
 import  java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Course algoritma = new Course("Algoritma", "Alg101", "ALG");
-        Course donanim = new Course("Donanım", "Dn101", "DNNM");
-
-        Teacher t1 = new Teacher("Ahmet Hoca", "90550000000", "ALG");
-        Teacher t2 = new Teacher("Fatma Ayşe", "90550000001", "DNNM");
-
-        algoritma.addTeacher(t1);
-        donanim.addTeacher(t2);
-
-        Student s1 = new Student("Kabe Kuş", 4,"21100903",algoritma,donanim);
-        s1.addBulkExamNote(70,65,90,60);
-        s1.isPass();
-
+        Fighter marc = new Fighter("Marc" , 15 , 100, 100, 50);
+        Fighter alex = new Fighter("Alex" , 10 , 95, 95, 50);
+        Ring r = new Ring(marc,alex , 85 , 100);
+        r.run();
     }
 }
