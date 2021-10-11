@@ -1,15 +1,35 @@
 package com.company;
 import  java.util.Scanner;
+import  java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
-        double[] harmonicList = {9,8,7,6,5,4};
-        double harmonicSerieTotal =0.0;
-        double harmonicSerieAvarage;
-        for (double j : harmonicList) {
-            harmonicSerieTotal += (1 / j);
+
+        int[] myList={56, 34, 1, 8, 101, -2, -33};
+
+
+        Scanner num = new Scanner(System.in);
+        System.out.print("Sayı Giriniz: ");
+        int number= num.nextInt();
+
+        int min=number ,max=number;
+
+        for (int i : myList) {
+            if(i>number){
+                if(number==max || i<max){
+                    max=i;
+                }
+            }else{
+                if(number==min || i>min){
+                    min=i;
+                }
+            }
         }
-        harmonicSerieAvarage = harmonicList.length / harmonicSerieTotal;
-        System.out.println("Harmonik Seri Toplamı: " + harmonicSerieTotal);
-        System.out.println("Harmonik Seri Ortalaması: " + harmonicSerieAvarage);
+
+        String list = Arrays.toString(myList);
+        System.out.println("Dizi: " + list);
+        System.out.println("Girilen Sayı: " + number);
+        System.out.println("Sayıya yakın küçük sayı: "+min);
+        System.out.println("Sayıya yakın büyük sayı: "+max);
+
     }
 }
