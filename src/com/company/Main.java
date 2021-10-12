@@ -3,27 +3,26 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int[] dizi = {9,13,51,88,60,13,64,10,10,13,88,60};
-        System.out.println("Dizi: "+ Arrays.toString(dizi));
-        frequency(dizi,dizi.length);
-    }
-    static void frequency(int[] arr,int length){
-        boolean[] dizi = new boolean[length];
-        Arrays.fill(dizi,false);
+        int[][] matrix = {
+                { 1, 2, 3 },
+                { 4, 5, 6}
+        };
 
-        System.out.println("Tekrar Sayıları");
-        for(int i=0;i<length;i++){
-            if(dizi[i]==true){
-                continue;
+        int[][] clone = new int[matrix[0].length][matrix.length];
+
+        System.out.println("Matris : ");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int k = 0; k < matrix[i].length; k++) {
+                clone[k][i] = matrix[i][k];
+                System.out.print(" " + matrix[i][k]);
             }
-            int count=1;
-            for(int j=i+1;j<length;j++){
-                if(arr[i]==arr[j]){
-                    dizi[j]=true;
-                    count++;
-                }
-            }
-            System.out.println(arr[i]+" sayısı "+count+" kere tekrar edildi");
+            System.out.println();
+        }
+        System.out.println("Transpoze : ");
+        for (int i = 0; i < clone.length; i++) {
+            for (int k = 0; k < clone[i].length; k++)
+                System.out.print(" " + clone[i][k]);
+            System.out.println();
         }
     }
 }
